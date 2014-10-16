@@ -35,6 +35,19 @@ every journey is going to include the following information:
 * create a new heoku app using `heroku create`
 * push the code `git push heroku master`
 
+## Nginx
+
+If (like me) you don't like Apache, just edit your nginx config to something like this:
+
+<code>
+location /api/ {
+    try_files $uri /var/www/web/index.php$is_args$args;
+}
+</code>
+
+This would be for testing and you still need to setup the "server" part.
+
+
 ## License
 Copyright (c) 2014 [Thierry Degeling](https://github.com/Kaweechelchen)
 Licensed under the MIT license.
